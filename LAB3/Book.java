@@ -1,7 +1,7 @@
 package LAB3;
 
 public class Book {
-    // Variables
+  // Variables
   private String title, author;
   private double price ;
   private boolean fixedPrice = false;
@@ -46,17 +46,17 @@ public double getPrice() {
   public void setTitle(String sT) {
     title = sT;
   }
-// Show TA and ask question
+//ask TA
 public void setPrice(double p) {
-    if (fixedPrice) {
-        System.out.println("Price is fixed");
+    if (fixedPrice ) {
+      System.out.println("Prix est fixe");
     }
     else if (p >= 0.0) {
       price = p;
       accountant.count(this);
     }
     else {
-      System.out.println("Price must be positive");
+      System.out.println("Prix peut pas etre negatif");
     }
   }
 
@@ -71,4 +71,5 @@ public static double getTotalPrice() {
   public String toString() {
     return "Book[title=" + title + ", author=" + author + ", fixedPrice = " + fixedPrice + ", price = $" + price + "]";
   }
+ 
 }
