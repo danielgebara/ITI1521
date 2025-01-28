@@ -46,7 +46,7 @@ public double getPrice() {
   public void setTitle(String sT) {
     title = sT;
   }
-//ask TA
+//ask TA!!!!!!!!
 public void setPrice(double p) {
     if (fixedPrice ) {
       System.out.println("Prix est fixe");
