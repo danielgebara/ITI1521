@@ -1,5 +1,10 @@
 package LAB3;
 
+// ITI 1521
+// Daniel Gebara
+// 300401006
+// TAB LAB 3
+
 public class Tab {
     public static void trier( int [ ] tab ){
         int i , j , min , tmp ; // déclaration de 4 variables de type entier (int).
