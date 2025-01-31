@@ -1,5 +1,10 @@
 package LAB3;
 
+// ITI 1521
+// Daniel Gebara
+// 300401006
+// Book LAB 3
+
 public class Book {
   // Variables
   private String title, author;
@@ -46,12 +51,13 @@ public double getPrice() {
   public void setTitle(String sT) {
     title = sT;
   }
-//ask TA!!!!!!!!
+//show TA
 public void setPrice(double p) {
     if (fixedPrice ) {
       System.out.println("Prix est fixe");
     }
     else if (p >= 0.0) {
+      fixedPrice = true;
       price = p;
       accountant.count(this);
     }
