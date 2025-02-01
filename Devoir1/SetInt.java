@@ -15,8 +15,8 @@ public class SetInt {
     }
 
     public boolean has(int p) {
-        for(int i = 0; i<tab.length; i++){
-            if (tab[i] == p) {
+        for(int i = 0; i<tab.length; i++){  // parcourir le tableau
+            if (tab[i] == p) {  // si l'element est present
                 return true;
             }
         }
@@ -24,23 +24,23 @@ public class SetInt {
     }
 
     public void add(int p) {
-        if (this.has(p)){
+        if (this.has(p)){ // si l'element est deja present
             return;
         }
-        tab[nbElements] = p;
-        nbElements++;
+        tab[nbElements] = p; // ajouter l'element
+        nbElements++; // incrementer le nombre d'elements
         return;
     }
 
     public  void trier( ){
-        for (int i = 1; i < nbElements; i++) {
+        for (int i = 1; i < nbElements; i++) { // pour i allant de 1 a la taille du tableau
             int key = tab[i];
             int j = i - 1;
-            while (j >= 0 && tab[j] > key) {
+            while (j >= 0 && tab[j] > key) { // tant que j est superieur ou egale a 0 et tab[j] est superieur a key
                 tab[j + 1] = tab[j];
-                j--;
+                j--;    // decrement j
             }
-            tab[j + 1] = key;
+            tab[j + 1] = key;   // tab[j+1] prend la valeur de key
         }
     }
     

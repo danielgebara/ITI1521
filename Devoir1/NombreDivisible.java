@@ -8,9 +8,9 @@ public class NombreDivisible {
          */
          // VOTRE CODE
         int cpt = 0;
-        for(int i = 0; i < x.length; i++) {
-            if (n != 0 && x[i] % n == 0) {
-                cpt = cpt + 1;
+        for(int i = 0; i < x.length; i++) { // pour i allant de 0 a la taille du tableau
+            if (n != 0 && x[i] % n == 0) {  // si x[i] est divisible par n
+                cpt = cpt + 1; // increment cpt
             }
         }
         return cpt;

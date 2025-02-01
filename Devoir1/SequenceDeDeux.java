@@ -11,11 +11,11 @@ public class SequenceDeDeux {
          // VOTRE CODE
         boolean res = false;
         int i = 0;
-        while(i < x.length-1 && !res){
-            if(x[i] == x[i+1]){
+        while(i < x.length-1 && !res){ // tant que i est inferieur a la taille du tableau -1 et res est faux
+            if(x[i] == x[i+1]){ // si x[i] est egale a x[i+1]
                 res = true;
             }
-            i = i + 1;
+            i = i + 1;  // increment i
         }
         return res;
     }

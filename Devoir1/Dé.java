@@ -8,13 +8,13 @@ public class Dé {
           * montre initialement une valeur al�atoire entre 1 et 6. 
          */
         public Dé() {
-           value = (int) (Math.random() * 6) + 1;        }
+           value = (int) (Math.random() * 6) + 1;        }     // end D�()
         
         /**
          * Lancez le d� pour qu'il indique un nombre al�atoire entre 1 et 6. 
          */
         public void lancer() {
-           value = (int) (Math.random() * 6) + 1;        }
+           value = (int) (Math.random() * 6) + 1;        }     // end lancer()
                 
         /**
          * Renvoie le nombre indiqu� sur le d�. 
@@ -28,10 +28,10 @@ public class Dé {
           * si la valeur n'est pas comprise entre 1 et 6. 
          */
         public void setValue( int val ) {
-           if (val < 1 || val > 6) {
-              System.out.println("Valeur illégale du dé " + val);
+           if (val < 1 || val > 6) { // si la valeur n'est pas comprise entre 1 et 6
+              System.out.println("Valeur illégale du dé " + val); 
            } else {
-              value = val;
+              value = val; // sinon on fixe la valeur du dé
            }        }
         
    

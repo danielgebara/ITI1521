@@ -9,14 +9,14 @@ public class SequenceMax {
          // VOTRE CODE
         int i = 0;
         int maxL = 1;
-        while(i < x.length-1){
+        while(i < x.length-1){ // tant que i est inferieur a la taille du tableau -1
             int tempL = 1;
-            while(i < x.length-1 && x[i] == x[i+1]){
-                tempL = tempL + 1;
-                i = i + 1;
+            while(i < x.length-1 && x[i] == x[i+1]){ // tant que i est inferieur a la taille du tableau -1 et x[i] est egale a x[i+1]
+                tempL = tempL + 1; // increment tempL
+                i = i + 1; // increment i
             }
-            if(tempL > maxL){
-                maxL = tempL;
+            if(tempL > maxL){ // si tempL est superieur a maxL
+                maxL = tempL; // maxL prend la valeur de tempL
             }
             i = i + 1;
         }

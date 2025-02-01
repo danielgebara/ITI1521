@@ -8,16 +8,16 @@ public class NombreDiviseurs {
     */
     public static int nombreDiviseurs(int n){
     // VOTRE CODE
-        if (n < 0) {
+        if (n < 0) { // si n est negatif 
             return 0;
         }
         int x = 0;
-        for (int i = 1; i <= n; i++) {
-            if (n % i == 0) {
-                x = x + 1;
+        for (int i = 1; i <= n; i++) { // pour i allant de 1 a n
+            if (n % i == 0) { // si n est divisible par i
+                x = x + 1;  // increment x
             }
         }
-        return x;
+        return x; 
     } // end class NombreDiviseurs
 
     public static void main(String[] args) {
