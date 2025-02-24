@@ -191,10 +191,80 @@ public void play(int i) {
   * been set
  */
 
-private void update(int index){
+ private void update(int index) {
+  // VOTRE CODE ICI
+  int row = index / columns;
+  int col = index % columns;
+  BoxSymbol currentSymbol = board[index];
 
- //VOTRE CODE ICI
+  // Check row
+  int count = 0;
+  for (int c = 0; c < columns; c++) {
+      if (board[row * columns + c] == currentSymbol) {
+          count++;
+          if (count == numberWin) {
+              gameState = (currentSymbol == BoxSymbol.X) ? GameState.XWIN : GameState.OWIN;
+              return;
+          }
+      } else {
+          count = 0;
+      }
+  }
 
+  // Check column
+  count = 0;
+  for (int r = 0; r < rows; r++) {
+      if (board[r * columns + col] == currentSymbol) {
+          count++;
+          if (count == numberWin) {
+              gameState = (currentSymbol == BoxSymbol.X) ? GameState.XWIN : GameState.OWIN;
+              return;
+          }
+      } else {
+          count = 0;
+      }
+  }
+
+  // Check diagonal (top-left to bottom-right)
+  count = 0;
+  int startRow = row - Math.min(row, col);
+  int startCol = col - Math.min(row, col);
+  while (startRow < rows && startCol < columns) {
+      if (board[startRow * columns + startCol] == currentSymbol) {
+          count++;
+          if (count == numberWin) {
+              gameState = (currentSymbol == BoxSymbol.X) ? GameState.XWIN : GameState.OWIN;
+              return;
+          }
+      } else {
+          count = 0;
+      }
+      startRow++;
+      startCol++;
+  }
+
+  // Check diagonal (bottom-left to top-right)
+  count = 0;
+  startRow = row + Math.min(rows - 1 - row, col);
+  startCol = col - Math.min(rows - 1 - row, col);
+  while (startRow >= 0 && startCol < columns) {
+      if (board[startRow * columns + startCol] == currentSymbol) {
+          count++;
+          if (count == numberWin) {
+              gameState = (currentSymbol == BoxSymbol.X) ? GameState.XWIN : GameState.OWIN;
+              return;
+          }
+      } else {
+          count = 0;
+      }
+      startRow--;
+      startCol++;
+  }
+
+  // Check for draw
+  if (round == rows * columns) {
+      gameState = GameState.DRAW;
+  }
 }
 
 
@@ -206,12 +276,19 @@ private void update(int index){
   *  String representation of the game
  */
 
-public String toString(){
-String res = "";
-//VOTRE CODE ICI
-return res ;
-
+ public String toString() {
+  // VOTRE CODE ICI
+  StringBuilder res = new StringBuilder();
+  for (int r = 0; r < rows; r++) {
+      for (int c = 0; c < columns; c++) {
+          res.append("| ").append(board[r * columns + c]).append(" ");
+      }
+      res.append("|\n");
+      if (r < rows - 1) {
+          res.append("---".repeat(columns)).append("\n");
+      }
+  }
+  return res.toString();
 }
-
 }
 

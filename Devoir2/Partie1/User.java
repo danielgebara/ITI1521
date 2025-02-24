@@ -7,6 +7,12 @@ public class User extends Player {
       if(game.getRound() == game.getRows()*game.getColumns()){
         System.out.println("Game is finished already!");
       }
-        // VOTRE CODE ICI
+      int move;
+        do {
+            System.out.print(game.nextBoxSymbol() + " to play: ");
+            move = Integer.parseInt(System.console().readLine()) - 1;
+        } 
+        while (move < 0 || move >= game.getRows() * game.getColumns() || game.boxSymbolAt(move) != BoxSymbol.EMPTY);
+        game.play(move);
     }
 }
